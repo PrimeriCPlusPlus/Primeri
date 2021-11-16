@@ -3,23 +3,23 @@ using namespace std;
 
 class Pravoagolnik {
 private:
-	int a;
-	int b;
+	int m_a;
+	int m_b;
 
 public:
-	void inicijalizacija(int ia, int ib)
+	void inicijalizacija(int a, int b)
 	{
-		a = ia;
-		b = ib;
+		m_a = a;
+		m_b = b;
 	}
 	int plostina()
 	{
-		return a * b;
+		return m_a * m_b;
 	}
 	int perimetar()
 	{
 		int l;
-		l = 2 * a + 2 * b;
+		l = 2 * m_a + 2 * m_b;
 		return l;
 	}
 };
@@ -31,6 +31,6 @@ int main() {
 	objP.inicijalizacija(a, b);
 
 	cout << "Perimetarot na pravoagolnikot e " << objP.perimetar() << endl;
-
+	cout << "Plostinata na pravoagolnikot e " << objP.plostina() << endl;
 	return 0;
 }
