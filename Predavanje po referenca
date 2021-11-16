@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+void Broj(int &x) {
+	x = 7;
+	cout << x << endl;
+}
+
+int main() {
+	int x = 3;
+	cout << x << endl;
+	Broj(x);
+	cout << x << endl;
+	return 0;
+}
