@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int *p = new int(3);
+	int *q = new int(4);
+	int s = *p + *q;
+	cout << s << endl;
+	int *a = new int;
+	*a = 5;
+	cout << *a << endl;
+	delete p, q, a;
+	return 0;
+}
