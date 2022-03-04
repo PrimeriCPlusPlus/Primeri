@@ -1,0 +1,41 @@
+#include <iostream>     
+using namespace std;
+
+class Niza {
+public:
+	int *broj;
+	int  golemina;
+	Niza(int golemina) {
+		broj = new int[golemina];
+		this->golemina = golemina;
+	}
+	~Niza() {
+		delete[] broj;
+	}
+};
+int main() {
+
+	Niza nizaBroevi(5);
+	int broj;
+	for (int i = 0; i < 5; i++)
+	{
+		cout << "Vnesi broj " << endl;
+		cin >> broj;
+		nizaBroevi.broj[i] = broj;
+	}
+
+	int max = nizaBroevi.broj[0];
+
+	for (int i = 0; i < 5; i++)
+	{
+		if (max < nizaBroevi.broj[i])
+		{
+			max = nizaBroevi.broj[i];
+		}
+		
+	}
+
+	cout << "Najgolem broj e  " << max << endl;
+	return 0;
+}
+
