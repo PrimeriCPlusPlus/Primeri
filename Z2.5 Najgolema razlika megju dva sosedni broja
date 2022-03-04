@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int *p = new int[5];
+	for (int i = 0; i < 5; i++)
+	{
+		int broj;
+		cin >> broj;
+		*(p + i) = broj;
+	}
+	cout << endl;
+	int max = 0;
+	for (int i = 0; i < 4; i++)
+	{
+		if (*(p + i) > *(p + i + 1))
+		{
+			if (max < *(p + i) - *(p + i + 1))
+				max = *(p + i) - *(p + i + 1);
+		}
+		else
+		{
+			if (max < *(p + i + 1) - *(p + i))
+				max = *(p + i + 1) - *(p + i);
+		}
+
+	}
+	cout << "Najgolemata razlika e  " << max << endl;
+	return 0;
+}
+
