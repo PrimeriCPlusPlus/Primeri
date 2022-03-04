@@ -1,0 +1,24 @@
+#include <iostream>     
+using namespace std;
+
+class Niza {
+public:
+	int *broj;
+	int  golemina;
+	Niza(int golemina) {
+		broj = new int[golemina];
+		this->golemina = golemina;
+	}
+	~Niza() {
+		delete[] broj;
+	}
+};
+int main() {
+
+	Niza nizaBroevi(2);
+	nizaBroevi.broj[0] = 3; nizaBroevi.broj[1] = 4;
+	cout << nizaBroevi.broj[1] << endl;
+  return 0;
+
+}
+
