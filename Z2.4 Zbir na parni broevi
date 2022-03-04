@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int *p = new int[5];
+	int broj;
+	for (int i = 0; i < 5; i++)
+	{
+		cout << "Vnesi broj" << endl;
+		cin >> broj;
+		*(p + i) = broj;
+	}
+	
+	int zbirParni = 0;
+	for (int i = 0; i < 5; i++)
+	{
+		if (*(p+i)%2==0)
+			zbirParni = zbirParni+*(p+i);
+		
+	}
+	cout << "Zbirot na parnite broevi e  " << zbirParni << endl;
+	delete[] p;
+	
+	return 0;
+}
