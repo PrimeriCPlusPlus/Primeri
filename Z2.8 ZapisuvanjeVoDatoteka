@@ -1,0 +1,18 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+int main() {
+	ofstream file("text.txt");
+	//file.open("text.txt"); 
+	//proveruvame dali datotekata e otvorena
+	if (file.is_open())
+	{
+		//vnesuvanje tekst
+		file << "Denes e vtornik"<<endl;  
+		//zatvoranje na datotekata
+		file.close();    
+	}
+
+	return 0;
+}
