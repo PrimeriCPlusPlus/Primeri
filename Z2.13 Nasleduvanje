@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+class ZbirRazlika
+{
+protected:
+	int m_a;
+	int m_b;
+public:
+	ZbirRazlika(int a, int b)
+	{
+		m_a = a;
+		m_b = b;
+	}
+	int soberi()
+	{
+		return m_a+m_b;
+	}
+	int odzemi()
+	{
+		return m_a-m_b;
+	}
+};
+
+class Proizvod:public ZbirRazlika
+{
+public:
+	Proizvod(int a, int b):ZbirRazlika(a,b)
+	{
+		m_a = a;
+		m_b = b;
+	}
+	int mnozi()
+	{
+		return m_a * m_b;
+	}
+};
+
+int main()
+{
+
+	Proizvod obj(3, 4);
+	cout << "Zbirot na broevite e " << obj.soberi() << endl;
+	cout << "Razlikata  na broevite e " << obj.odzemi() << endl;
+	cout << "Proizvodot na broevite e " << obj.mnozi() << endl;
+	return 0;
+
+}
