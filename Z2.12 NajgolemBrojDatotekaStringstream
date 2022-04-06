@@ -1,0 +1,43 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+using namespace std;
+int main() {
+	//otvoranje na datotekata od koja sakame da citame
+	ifstream file("text.txt");
+	//int suma = 0;
+	
+	if (file.is_open()) {
+		string str;
+		int brojac = 0;
+		int max;
+		//citame linija po linija od datotekata text.txt
+		while (getline(file, str)) {
+			brojac = brojac+1;
+			if (brojac == 1)
+			{
+				stringstream ss;
+				ss << str;
+				ss >> max;
+				//max = stoi(str);
+			}
+			else
+			{
+				stringstream ss;
+				int broj;
+				ss << str;
+				ss >> broj;
+				if (max < broj)
+				{
+					max = broj;
+				}
+			}
+
+		}
+		file.close();
+		cout << "Najgolem broj e brojot  " << max << endl;
+	}
+	
+	return 0;
+}
