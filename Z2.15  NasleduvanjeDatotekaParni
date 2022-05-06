@@ -1,0 +1,83 @@
+
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+class Datoteka
+{
+protected:
+	int arr[10];
+	
+public:
+	void readData()
+	{
+		ifstream file("text.txt");
+
+		if (file.is_open()) {
+			string str;
+			//citame linija po linija od datotekata text.txt
+			int i = 0;
+			while (getline(file, str)) {
+				//prikazuvame linija po linija od datotekata
+				cout << str << endl;
+				arr[i] = stoi(str);
+				i++;
+			}
+			file.close();
+		}
+	}
+	void writeData(int broj)
+	{
+		ofstream file("textParni.txt", std::ios_base::app);
+		
+		//proveruvame dali datotekata e otvorena
+		if (file.is_open())
+		{
+			file << broj << endl;
+			//zatvoranje na datotekata
+			file.close();
+		}
+
+	}
+
+};
+
+class Funkcii :public Datoteka
+{
+public:
+	int maxC()
+	{
+		int max = arr[0];
+		for (int i = 0; i < 10; i++)
+		{
+			if (max < arr[i])
+				max = arr[i];
+		}
+		return max;
+	}
+	void parniBroevi() 
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			if (arr[i] % 2 == 0)
+			{
+				writeData(arr[i]);
+
+			}
+		}
+	}
+};
+
+int main()
+{
+	Funkcii obj;
+	obj.readData();
+	obj.parniBroevi();
+	
+
+
+	return 0;
+
+}
