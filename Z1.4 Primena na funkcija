@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+// deklaracija na funicijata:
+int Suma(int niza[], int brojNaElemetni);
+
+int main() {
+	// definiranje i inicijalizacija na nizata
+	int niza[5] = { 1000, 2, 3, 17, 50 };
+	int suma;
+
+	// predavanje na nizata kako argument na funkcijata.
+	suma = Suma(niza, 5);
+
+	// prikazuvaje na vrednosta 
+	cout << "Zbirot na broevite od nizata e : " << suma << endl;
+
+	return 0;
+}
+
+int Suma(int niza[], int brojNaElementi) {
+	int i, suma = 0;
+	double;
+
+	for (i = 0; i < brojNaElementi; ++i) {
+		suma = suma + niza[i];
+	}
+
+
+	return suma;
+}
