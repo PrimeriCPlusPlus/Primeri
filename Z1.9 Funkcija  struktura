@@ -1,0 +1,53 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Licnost {
+	string ime;
+	string prezime;
+	int godini;
+}objLicnost[3];
+
+int NajvozrasnaLicnost(Licnost objLicnost[]);
+
+int main() {
+
+	int najvozrasnaLicnostIndex;
+	cout << "Vnesi podatoci za licnostite" << endl;
+	for (int i = 0; i < 3; i++)
+	{
+		cin >> objLicnost[i].ime;
+		cin >> objLicnost[i].prezime;
+		cin >> objLicnost[i].godini;
+		cout << endl;
+	}
+
+	najvozrasnaLicnostIndex = NajvozrasnaLicnost(objLicnost);
+	cout << "Najvozrasna licnost e " << endl;
+
+	cout << objLicnost[najvozrasnaLicnostIndex].ime << endl;
+	cout << objLicnost[najvozrasnaLicnostIndex].prezime << endl;
+	cout << objLicnost[najvozrasnaLicnostIndex].godini << endl;
+
+
+	return 0;
+}
+
+int NajvozrasnaLicnost(Licnost objLicnost[])
+{
+	int najvozrasnaIndex = 0;
+	int godini = 0;
+	for (int i = 0; i < 3; i++)
+	{
+		if (objLicnost[i].godini > godini)
+		{
+			godini = objLicnost[i].godini;
+			najvozrasnaIndex = i;
+		}
+
+
+	}
+
+	return najvozrasnaIndex;
+}
+
