@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+class Pravoagolnik {
+private:
+	int a;
+	int b;
+
+public:
+	Pravoagolnik (int ca, int cb)
+	{
+		a = ca;
+		b = cb;
+	}
+	int plostina()
+	{
+		return a * b;
+	}
+	int perimetar()
+	{
+		int l;
+		l = 2 * a + 2 * b;
+		return l;
+	}
+};
+
+int main() {
+	int a = 3;
+	int b = 4;
+	Pravoagolnik objP(a, b);
+
+
+	cout << "Perimetarot na pravoagolnikot e " << objP.perimetar() << endl;
+	cout << "Plostinata  na pravoagolnikot e " << objP.plostina() << endl;
+	return 0;
+}
